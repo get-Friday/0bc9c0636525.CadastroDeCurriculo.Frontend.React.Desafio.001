@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createContext } from "react";
 import PropTypes from "prop-types";
 
-const FormContext = createContext();
+export const FormContext = createContext();
 
 export const FormContextProvider = ({ children }) => {
 	const [formStep, setFormStep] = useState(1);
