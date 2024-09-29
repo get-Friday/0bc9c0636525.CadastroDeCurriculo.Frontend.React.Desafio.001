@@ -10,18 +10,21 @@ import App from "./App.jsx";
 
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
+import { FormContextProvider } from "./contexts/form-context.jsx";
 
 dayjs.locale("pt-br");
 dayjs.extend(customParseFormat);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <MantineProvider>
-      <ModalsProvider>
-        <DatesProvider settings={{ locale: "pt-br" }}>
-          <App />
-        </DatesProvider>
-      </ModalsProvider>
-    </MantineProvider>
-  </StrictMode>
+	<StrictMode>
+		<MantineProvider>
+			<ModalsProvider>
+				<DatesProvider settings={{ locale: "pt-br" }}>
+					<FormContextProvider>
+						<App />
+					</FormContextProvider>
+				</DatesProvider>
+			</ModalsProvider>
+		</MantineProvider>
+	</StrictMode>
 );
